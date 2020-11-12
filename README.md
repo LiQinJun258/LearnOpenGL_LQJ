@@ -1,5 +1,9 @@
 # LearnOpenGL_LQJ
+
+
 这是自己博客专栏《[学习笔记：LearnOpenGL系列](https://blog.csdn.net/weixin_43803133/category_10237767.html)》中项目代码的收集。
+
+
 <br>在这个系列博客中，我参照LearnOpenGL网站的资源，进行了代码复现和知识总结。
 ## 关于如何在本地使用
 把该项目下载到本地后，可以看到有个名叫OpenGL的文件，这是需要用到的库文件
