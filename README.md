@@ -6,7 +6,7 @@
 
 <br>在这个系列博客中，我参照LearnOpenGL网站的资源，进行了代码复现和知识总结。
 ## 关于如何在本地使用
-把该项目下载到本地后，可以看到有个名叫OpenGL的文件，这是需要用到的库文件
+把该项目下载到本地后，可以看到有个名叫OpenGL的文件夹，这是需要用到的库文件
 
 <br>可以将其放到某个目录下，打开OpenGLExercise001.sln这个解决方案，参照以下形式设置项目的库目录（文件夹对就可以，盘符位置都随意）<br>
 <img src="https://csdnimg.cn/release/notification/testa7f6c1a2-cc04-4a7c-bf12-e271c2543ecd.jpg" width="500">  
