@@ -7,7 +7,8 @@
 <img src="https://csdnimg.cn/release/notification/testa7f6c1a2-cc04-4a7c-bf12-e271c2543ecd.jpg" width="500">  
 <img src="https://csdnimg.cn/release/notification/test4fbad11d-8666-41b7-b9cc-503db6d88a89.jpg" width="500">  
 <img src="https://csdnimg.cn/release/notification/testd74d6bb5-925b-43aa-9087-a061c21999b2.jpg" width="500">  
-打开项目后可以看到若干个main.cpp
+
+<br>打开OpenGLExercise001.sln可以使用这个项目，可以看到若干个main.cpp
 <br>
 <img src="https://img-blog.csdnimg.cn/20201112205235845.png" width="300">
 <br>
