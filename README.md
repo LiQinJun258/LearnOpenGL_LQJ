@@ -11,7 +11,11 @@
 <br>
 <img src="https://img-blog.csdnimg.cn/20201112205235845.png" width="300">
 <br>
-把用不到的都：右键→属性→常规→从生成中排出→是，只留一个执行就可以，如果遇到报错是model类报错（即该main里没有用模型），把model.cpp从生成中排除就可以
+把用不到的都：右键→属性→常规→从生成中排出→是
+<br>
+只留一个执行就可以
+<br>
+如果遇到报错是model类报错（即该main里没有用模型），把model.cpp从生成中排除就可以
 ## 效果展示和说明
 ### main0：入门→gamma校正
 <img src="https://img-blog.csdnimg.cn/20201112205832310.png" width="600">  
