@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LightDirectional.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LightPoint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LightSpot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main1%28几何着色器测试%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main2%28方块实例化渲染%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main3%28小行星带非实例化渲染%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main4%28小行星带实例化渲染%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main5%28深度贴图%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main5.1%28平行光阴影测试%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main5.2(点光源阴影测试).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main0%28入门→gamma校正%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main6%28法线贴图+视差贴图%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main7HDR.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main8bloom.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main9延迟着色.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main10SSAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LightDirectional.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LightPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LightSpot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="vertexSource.vert" />
+    <Text Include="skyBox.vert" />
+    <Text Include="screen.vert" />
+    <Text Include="Border.frag" />
+    <Text Include="fragmentSource.frag" />
+    <Text Include="geometrySource.geom" />
+    <Text Include="glass.frag" />
+    <Text Include="grass.frag" />
+    <Text Include="screen.frag" />
+    <Text Include="skyBox.frag" />
+    <Text Include="skyBoxReflection.frag" />
+    <Text Include="skyBoxReflection.vert" />
+    <Text Include="vertexSourceObjExplode.vert" />
+    <Text Include="vertexSourceNormal.vert" />
+    <Text Include="fragmentSourceNormal.frag" />
+    <Text Include="geometrySourceNormal.geom" />
+    <Text Include="fragmentSourceSpace.frag" />
+    <Text Include="vertexSourceSpace.vert" />
+    <Text Include="vertexSourcePlanet.vert" />
+    <Text Include="vertexShadowMappingDepth.vert" />
+    <Text Include="fragmentShadowMappingDepth.frag" />
+    <Text Include="vertex_debug_quad.vert" />
+    <Text Include="vertexShadowMappingTest.vert" />
+    <Text Include="fragmentShadowMappingTest.frag" />
+    <Text Include="point_shadows_depth.vert" />
+    <Text Include="point_shadows_depth.geom" />
+    <Text Include="point_shadows_depth.frag" />
+    <Text Include="point_shadows.vert" />
+    <Text Include="point_shadows.frag" />
+    <Text Include="vertex_NormalTest.vert" />
+    <Text Include="fragment_NormalTest.frag" />
+    <Text Include="lighting.vert" />
+    <Text Include="lighting.frag" />
+    <Text Include="hdr.vert" />
+    <Text Include="hdr.frag" />
+    <Text Include="bloom_basic.vert" />
+    <Text Include="bloom_basic.frag" />
+    <Text Include="bloom_lightBox.frag" />
+    <Text Include="bloom_blur.vert" />
+    <Text Include="bloom_blur.frag" />
+    <Text Include="bloom_final.vert" />
+    <Text Include="bloom_final.frag" />
+    <Text Include="g_buffer.vert" />
+    <Text Include="g_buffer.frag" />
+    <Text Include="deferred_shading.vert" />
+    <Text Include="deferred_shading.frag" />
+    <Text Include="deferred_light_box.vert" />
+    <Text Include="deferred_light_box.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="container.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="container2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="container2_specular.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="matrix.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="grass.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="blending_transparent_window.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="awesomeface.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="top.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="back.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="bottom.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="front.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="left.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="right.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_back.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_front.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_left.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_right.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_up.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="space_skybox_down.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="wood.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="brickwall.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="brickwall_normal.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="bricks2.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="bricks2_disp.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="bricks2_normal.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="fragment_debug_quad_depth.frag" />
+    <None Include="ssao_geometry.vert" />
+    <None Include="ssao_geometry.frag" />
+    <None Include="ssao.vert" />
+    <None Include="ssao.frag" />
+    <None Include="ssao_lighting.frag" />
+    <None Include="ssao_blur.frag" />
+  </ItemGroup>
+</Project>
