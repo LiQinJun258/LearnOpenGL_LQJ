@@ -1,0 +1,30 @@
+推荐使用Edge浏览器
+
+NPR网页可直接打开
+
+
+PBR网页涉及文件加载，需要以下简单操作
+
+准备环境：
+一、如果该没有装过node.js，则下载 node.js
+下载地址：https://nodejs.org/en/download/
+
+二、安装环境
+打开cmd，执行 npm install http-server -g 
+
+三、启动：
+在cmd依次执行以下语句：
+当前盘符:
+cd 本项目目录
+http-server
+
+样例如下：
+c:
+cd C:\Users\李钦俊\Desktop\中期
+http-server
+
+
+四、打开网页
+http://127.0.0.1:8080/PBR_ForMiddle/index.html
+http://127.0.0.1:8080/NPR_ForMiddle/index.html
+

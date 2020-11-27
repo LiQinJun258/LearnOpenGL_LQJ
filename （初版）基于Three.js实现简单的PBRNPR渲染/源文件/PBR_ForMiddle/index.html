@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" charset="UTF-8" src="./three/build/three.js"></script>
+    <title>PBR_DirectLight</title>
+
+    <link type="text/css" rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="info">只考虑直接光照的PBR渲染效果实现
+    <br/>在反射方程中采用Cook-Torrance BRDF模型
+    <br/>参数是控制BRDF中的镜面反射部分
+    <br/>金属度根据Fresnel-Schlick近似菲涅尔项，控制漫反射和镜面光的比例
+    <br/>粗糙度用处一：采用史密斯法与Schlick-GGX近似几何函数，计算观察方向的几何遮蔽，光线方向的几何阴影
+    <br/>粗糙度用处二：采用Trowbridge-Reitz GGX近似法线分布函数，计算取向方向与中间向量一致的微平面的数量
+    <br/>三个函数分别用来近似的计算出表面反射特性的一个特定部分
+    <br/>将metallic，rough条拉动可观察两者区别
+</div>
+<div id="webgl-output"></div>
+<script  type="module" src="./app.js"></script>
+
+</body>
+</html>
