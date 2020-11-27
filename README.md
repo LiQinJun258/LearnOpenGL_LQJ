@@ -101,5 +101,9 @@
 <img src="https://img-blog.csdnimg.cn/20201101142039446.png" width="600">  
 这部分对如何实现SSAO进行了探索，进行了总结学习，对应SSAO的学习笔记
 
+### 初版PBR
+<img src="https://img-blog.csdnimg.cn/20201128000052539.png" width="600">
+直接光照的PBR实现
+
 <br>
 后续PBR部分锐意更新中
