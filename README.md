@@ -105,5 +105,7 @@
 <img src="https://img-blog.csdnimg.cn/20201128000052539.png" width="600">
 直接光照的PBR实现
 
-<br>
-后续PBR部分锐意更新中
+### 实现IBL
+<img src="https://img-blog.csdnimg.cn/20201215123506984.png" width="600">
+实现基于图像的光照
+
