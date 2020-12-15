@@ -1,0 +1,35 @@
+推荐使用Edge浏览器
+——————————
+可直接从以下链接，通过服务器访问（大约1月中旬服务器过期）
+https://webfinal-1258482401.cos.ap-beijing.myqcloud.com/%E6%96%87%E4%BB%B6-web%E6%9C%9F%E6%9C%AB/PBR_Final/index.html
+——————————
+也可通过本地网页打开
+
+--NPR网页可直接打开
+
+--PBR网页涉及文件加载，需要以下简单操作
+
+---若已有环境直接选择第三步
+
+---准备环境：
+---一、如果该没有装过node.js，则下载 node.js
+----下载地址：https://nodejs.org/en/download/
+----下载完成，点击安装，一路next
+
+---二、安装环境
+----打开cmd，执行 npm install http-server -g 
+
+---三、启动：
+----在cmd依次执行以下语句：
+----当前盘符:
+----cd 本项目目录
+----http-server
+
+---样例如下：
+----c:
+----cd C:\Users\李钦俊\Desktop\web期末
+----http-server
+
+---四、打开网页
+----http://127.0.0.1:8080/PBR_Final/index.html
+

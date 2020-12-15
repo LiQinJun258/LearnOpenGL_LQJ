@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="text/javascript" charset="UTF-8" src="./three/build/three.js"></script>
+    <title>PBR_DirectLight+IBL</title>
+
+    <link type="text/css" rel="stylesheet" href="main.css">
+	<div  style="right: 100px; position: absolute; top: 600px;">	
+<a href="../NPR_Final/index.html"><input class="button"  type = "button" value="NPR" ></input></a>
+</div>
+        <script  type="module" src="./app.js"></script>
+</head>
+    <body>
+        <div id="info">用Three.js实现基于物理的渲染(Physically Based Rendering)的部分技术
+            <br/>该项目实现了 基于物理的光照模型 与 基于图像的光照(Image based lighting, IBL)
+            <br/>
+            <br/>基于物理的光照模型实现了反射方程，其中采用了Cook-Torrance BRDF模型（明显处如 球的亮斑）
+            <br/>
+            <br/>基于图像的光照(IBL)预先烘培辐照度贴图、构建BRDF积分查找表（右边的红绿图为BRDF预积分）
+            <br/>在实时渲染中直接查询查找表，快速计算渲染方程，实现的效果高效且真实。(明显处如 球的表现效果)
+            <br/>这种技术已经集成在虚幻4引擎中
+            <br/>
+            <br/>金属度metallic近似菲涅尔项，控制漫反射和镜面光的比例
+            <br/>粗糙度roughness计算几何遮蔽和阴影，以及估算与中间向量一致的微平面
+
+        </div>
+    </body>
+</html>

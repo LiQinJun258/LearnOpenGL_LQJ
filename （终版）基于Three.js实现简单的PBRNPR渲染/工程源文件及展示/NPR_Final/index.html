@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - loaders - OBJ loader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	 <link rel="stylesheet" href="style.css">
+        <div style="left: 20px; position: absolute; top: 20px;">
+		用Three.js实现非真实感绘制(Non-photorealistic rendering)的部分技术
+            <br/>该项目实现了黑色轮廓线，漫反射形成明显色块与高光区域的突变白色亮块
+            <br/>
+            <br/>采用了Cel Shading算法
+            <br/>
+            <br/>将颜色丰富的渐变色彩变成单调的平面色彩，也就是降低色阶数量，达到一种卡通的光照效果。
+
+
+
+        </div>
+<div  style="right: 100px; position: absolute; top: 100px;">	
+ <button class="button"  onclick="orb()">
+                        球体
+						<p></p>
+                    </button>
+</div>
+<div  style="right: 100px; position: absolute; top: 150px;">	
+ <button class="button"  onclick="ring()">
+                        圆环
+						<span></span>
+                    </button>
+</div>
+
+<div  style="right: 95px; position: absolute; top: 200px;">	
+<input id="data" type="text" name="name" />
+</div>
+<div  style="right: 100px; position: absolute; top: 250px;">	
+ <button  class="button"    onclick="colorChange()">
+                        换色
+						<span></span>
+                    </button>
+</div>
+
+<div  style="right: 100px; position: absolute; top: 600px;">	
+<a href="../PBR_Final/index.html"><input class="button" type = "button" value="PBR" ></input></a>
+</div>
+    <!-- ---------------- Custom Shader Code ------------------------ -->
+    <script id="fish-vertexShader" type="x-shader/x-vertex">
+    varying vec3 vNormal;
+    void main()
+    {
+         vNormal = normalize(normalMatrix * normal);
+         gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    }
+    </script>
+
+    <!-- fragment shader a.k.a. pixel shader -->
+    <script id="fish-fragmentShader" type="x-shader/x-vertex">
+    uniform vec3 light;
+    varying vec3 vNormal;
+    uniform vec3 color;
+    void main()
+    {
+        float diffuse = dot(normalize(light), vNormal);
+        float dir = length(vNormal * vec3(0.0, 0.0, 1.0));
+        if (dir < 0.3) {
+        dir = 0.0;
+        gl_FragColor = vec4(dir, dir, dir, 1.0);
+    }
+    else {
+       if (diffuse > 0.96) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    }
+	else{
+	if (diffuse > 0.6) {
+        diffuse =0.6+0.3* smoothstep(0.6,0.96,diffuse);
+    } 
+
+    else if (diffuse > 0.3) {
+        diffuse =0.3+0.3* smoothstep(0.3,0.6,diffuse);
+    }
+	else if (diffuse > 0.1) {
+        diffuse =0.1+0.2* smoothstep(0.1,0.3,diffuse);
+    }
+    else {
+        diffuse = 0.1* smoothstep(0.001,0.1,diffuse);
+    }
+	
+        gl_FragColor = vec4( color* diffuse, 1.0);
+	
+        }
+          }
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="div2">
+<script src="js/three.js"></script>
+
+
+
+<script>
+
+    var container;
+
+    var camera, scene, renderer;
+
+    var mouseX = 0, mouseY = 0;
+
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+    var sm;
+
+    init();
+    animate();
+
+   
+        function colorChange(){
+     
+		   sm = new THREE.ShaderMaterial(
+                {
+                    uniforms:
+                        {
+                            light: {type: 'v3', value: keyLight.position},
+                            color: {        
+                                type: 'v3', 
+                                value: new THREE.Color(document.getElementById("data").value)
+                            }
+                        },
+                    vertexShader:   document.getElementById( 'fish-vertexShader'   ).textContent,
+                    fragmentShader: document.getElementById( 'fish-fragmentShader' ).textContent,
+                    side: THREE.FrontSide,
+                    blending: THREE.AdditiveBlending,
+                }   );
+	  
+        }
+    function init() {
+
+
+
+
+        container = document.createElement( 'div' );
+        document.body.appendChild( container );
+
+        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+        camera.position.z = 20;
+
+        // scene
+
+        scene = new THREE.Scene();
+
+  keyLight = new THREE.SpotLight(0xffffff, 1, 5000, Math.PI / 6, 25);
+                keyLight.position.set(1000, 1000, 500);
+                keyLight.target.position.set(100, 0, 0);
+                scene.add(keyLight);
+
+                fillLight = new THREE.SpotLight(0xffffff, 0.4, 1000, Math.PI / 6, 25);
+                fillLight.position.set(80, -20, -200);
+                fillLight.target.position.set(0, 0, -200);
+                scene.add(fillLight);
+
+                backLight = new THREE.AmbientLight(0xffffff, 0.2);
+                scene.add(backLight);
+
+            //着色器材质
+            sm = new THREE.ShaderMaterial(
+                {
+                    uniforms:
+                        {
+                            light: {type: 'v3', value: keyLight.position},
+                            color: {        
+                                type: 'v3', 
+                                value: new THREE.Color('#48D1CC')
+                            }
+                        },
+                    vertexShader:   document.getElementById( 'fish-vertexShader'   ).textContent,
+                    fragmentShader: document.getElementById( 'fish-fragmentShader' ).textContent,
+                    side: THREE.FrontSide,
+                    blending: THREE.AdditiveBlending,
+                }   );
+
+        
+        //
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer.setClearColor( 0xEEEE00 );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.gammaInput = true;
+        renderer.gammaOutput = true;
+        container.appendChild( renderer.domElement );
+
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    }
+
+    function onWindowResize() {
+
+        windowHalfX = window.innerWidth / 2;
+        windowHalfY = window.innerHeight / 2;
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
+
+    function onDocumentMouseMove( event ) {
+
+        mouseX = ( event.clientX - windowHalfX ) / 20;
+        mouseY = ( event.clientY - windowHalfY ) / 20;
+
+    }
+
+    //
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+        render();
+
+    }
+
+    function render() {
+
+        camera.position.x += ( mouseX - camera.position.x ) * .05;
+        camera.position.y += ( - mouseY - camera.position.y ) * .05;
+
+        camera.lookAt( scene.position );
+
+        renderer.render( scene, camera );
+
+    }
+	function orb() {
+	  scene = new THREE.Scene();
+
+
+        var directionalLight = new THREE.DirectionalLight( 0xffffff );
+        directionalLight.position.set( 1, 1, 1 );
+        scene.add( directionalLight );
+	
+    var geometry = new THREE.SphereBufferGeometry( 5, 32, 32 );
+        var cube = new THREE.Mesh( geometry, sm );
+        scene.add( cube );
+}
+
+	function ring() {
+	  scene = new THREE.Scene();
+
+
+        var directionalLight = new THREE.DirectionalLight( 0xffffff );
+        directionalLight.position.set( 1, 1, 1 );
+        scene.add( directionalLight );
+	
+       var geometry = new THREE.TorusGeometry(3, 1, 60, 60);
+        var cube = new THREE.Mesh( geometry, sm );
+        scene.add( cube );
+
+}
+var $button = document.querySelector('.button');
+$button.addEventListener('click', function() {
+  var duration = 0.3,
+      delay = 0.08;
+  TweenMax.to($button, duration, {scaleY: 1.6, ease: Expo.easeOut});
+  TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+  TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
+});
+	
+</script>
+</div>      
+</body>
+</html>
