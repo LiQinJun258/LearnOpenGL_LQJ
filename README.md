@@ -9,7 +9,7 @@
 把该项目下载到本地后，可以看到有个名叫OpenGL的文件夹，这是需要用到的库文件
 
 <br>可以将其放到某个目录下，打开OpenGLExercise001.sln这个解决方案，参照以下形式设置项目的库目录（文件夹对就可以，盘符位置都随意）<br>
-<br>**可以把"C:\"换成"..\"**<br>
+<br>**可以把"C:\\"换成"..\\"**<br>
 <img src="https://csdnimg.cn/release/notification/testa7f6c1a2-cc04-4a7c-bf12-e271c2543ecd.jpg" width="500">  
 <img src="https://csdnimg.cn/release/notification/test4fbad11d-8666-41b7-b9cc-503db6d88a89.jpg" width="500">  
 <img src="https://csdnimg.cn/release/notification/testd74d6bb5-925b-43aa-9087-a061c21999b2.jpg" width="500">  
