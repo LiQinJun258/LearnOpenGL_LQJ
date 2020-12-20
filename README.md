@@ -108,6 +108,6 @@
 PBR中基于物理的光照模型实现
 
 ### 实现IBL
-<img src="https://img-blog.csdnimg.cn/20201215123506984.png" width="600">
+<img src="https://img-blog.csdnimg.cn/20201220235603317.png" width="600">
 实现基于图像的光照
 
