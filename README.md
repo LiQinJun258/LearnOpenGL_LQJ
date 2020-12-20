@@ -105,7 +105,7 @@
 
 ### 初版PBR
 <img src="https://img-blog.csdnimg.cn/20201128000052539.png" width="600">
-直接光照的PBR实现
+PBR中基于物理的光照模型实现
 
 ### 实现IBL
 <img src="https://img-blog.csdnimg.cn/20201215123506984.png" width="600">
